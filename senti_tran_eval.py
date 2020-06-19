@@ -38,11 +38,11 @@ def build_model(nb_words, rnn_model="SimpleRNN", embedding_matrix=None):
         
     # add an RNN layer according to rnn_model
     if rnn_model == "SimpleRNN":
-        model.add(SimpleRNN(200, activation='relu'))
+        model.add(SimpleRNN(200))
     elif rnn_model == "LSTM":
-        model.add(LSTM(200, activation='relu'))
+        model.add(LSTM(200))
     else:
-        model.add(GRU(200, activation='relu'))
+        model.add(GRU(200))
     # model.add(Dense(500,activation='relu'))
     # model.add(Dense(500, activation='relu'))
     model.add(Dense(2, activation='softmax'))
