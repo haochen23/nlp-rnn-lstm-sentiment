@@ -24,7 +24,7 @@ def build_model(nb_words, rnn_model="SimpleRNN", embedding_matrix=None):
     '''
     model = Sequential()
     # add an embedding layer
-    if embedding_matrix:
+    if embedding_matrix is not None:
         model.add(Embedding(nb_words, 
                         200, 
                         weights=[embedding_matrix], 
